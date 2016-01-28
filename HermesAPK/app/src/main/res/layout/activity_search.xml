@@ -18,8 +18,8 @@
         android:layout_marginTop="74dp"
         android:textStyle="bold"
         android:elegantTextHeight="true"
-        android:typeface="monospace"
-        android:textColor="#4c06a7" />
+        android:typeface="normal"
+        android:textColor="#070708" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -44,8 +44,8 @@
         android:layout_below="@+id/editText"
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView"
-        android:typeface="monospace"
-        android:textColor="#FF4C06A7" />
+        android:typeface="normal"
+        android:textColor="#060606" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -59,8 +59,8 @@
         android:layout_below="@+id/textView2"
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2"
-        android:typeface="monospace"
-        android:textColor="#FF4C06A7" />
+        android:typeface="normal"
+        android:textColor="#060606" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -74,8 +74,8 @@
         android:layout_alignStart="@+id/textView3"
         android:elegantTextHeight="true"
         android:textStyle="bold"
-        android:typeface="monospace"
-        android:textColor="#FF4C06A7" />
+        android:typeface="normal"
+        android:textColor="#060606" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -89,8 +89,9 @@
         android:layout_alignStart="@+id/textView4"
         android:textStyle="bold"
         android:elegantTextHeight="true"
-        android:typeface="monospace"
-        android:textColor="#FF4C06A7" />
+        android:typeface="normal"
+        android:textColor="#FF060606"
+        android:visibility="visible" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -104,8 +105,8 @@
         android:layout_marginTop="42dp"
         android:elegantTextHeight="true"
         android:textStyle="bold"
-        android:typeface="monospace"
-        android:textColor="#FF4C06A7" />
+        android:typeface="normal"
+        android:textColor="#FF060606" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -160,11 +161,13 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="Continue"
         android:id="@+id/button"
-        android:layout_marginBottom="40dp"
-        android:layout_marginTop="460dp"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
+        android:textStyle="bold"
+        android:clickable="true"
+        android:layout_marginBottom="45dp"
+        android:background="@android:drawable/editbox_dropdown_light_frame"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
