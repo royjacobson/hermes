@@ -10,7 +10,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.hermes.hermes.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_main"
+    android:clickable="false">
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,8 +24,97 @@
         android:layout_alignParentEnd="false"
         android:text="What are you looking for?"
         android:textAlignment="center"
-        android:textColor="#4d0565"
-        android:typeface="monospace"
+        android:textColor="#0b0b0b"
+        android:typeface="sans"
         android:visibility="visible"
         android:textStyle="bold" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:height="70dp"
+        android:text="Music"
+        android:id="@+id/button2"
+        android:textStyle="bold"
+        android:layout_above="@+id/button3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:enabled="true"
+        android:background="#fff8e1" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:height="70dp"
+        android:text="SPORTS"
+        android:id="@+id/button3"
+        android:textStyle="bold"
+        android:layout_above="@+id/button4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#ffe082" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:height="70dp"
+        android:text="art"
+        android:id="@+id/button4"
+        android:textStyle="bold"
+        android:layout_above="@+id/button5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#ffca28" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:height="70dp"
+        android:text="Film &amp; Theatre"
+        android:id="@+id/button5"
+        android:textStyle="bold"
+        android:layout_above="@+id/button6"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="#ffc107" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:height="70dp"
+        android:text="Festivals"
+        android:id="@+id/button6"
+        android:textStyle="bold"
+        android:layout_above="@+id/button7"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="#ffa000" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:height="70dp"
+        android:text="Dance"
+        android:id="@+id/button7"
+        android:textStyle="bold"
+        android:layout_above="@+id/button8"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="#ff8f00" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:height="70dp"
+        android:text="Other"
+        android:id="@+id/button8"
+        android:textStyle="bold"
+        android:clickable="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#ff6f00" />
+
 </RelativeLayout>
