@@ -27,7 +27,8 @@
         android:textColor="#0b0b0b"
         android:typeface="sans"
         android:visibility="visible"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColorHint="#702323" />
 
     <Button
         android:layout_width="fill_parent"
@@ -36,13 +37,14 @@
         android:text="Music"
         android:id="@+id/button2"
         android:textStyle="bold"
-        android:layout_above="@+id/button3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:enabled="true"
-        android:background="#fff8e1" />
+        android:background="#fff8e1"
+        android:layout_above="@+id/button3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:clickable="true" />
 
     <Button
         android:layout_width="fill_parent"
@@ -54,7 +56,8 @@
         android:layout_above="@+id/button4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#ffe082" />
+        android:background="#ffe082"
+        android:clickable="true" />
 
     <Button
         android:layout_width="fill_parent"
@@ -66,7 +69,8 @@
         android:layout_above="@+id/button5"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#ffca28" />
+        android:background="#ffca28"
+        android:clickable="true" />
 
     <Button
         android:layout_width="fill_parent"
@@ -78,7 +82,8 @@
         android:layout_above="@+id/button6"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background="#ffc107" />
+        android:background="#ffc107"
+        android:clickable="true" />
 
     <Button
         android:layout_width="fill_parent"
@@ -90,7 +95,8 @@
         android:layout_above="@+id/button7"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background="#ffa000" />
+        android:background="#ffa000"
+        android:clickable="true" />
 
     <Button
         android:layout_width="fill_parent"
@@ -102,7 +108,8 @@
         android:layout_above="@+id/button8"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background="#ff8f00" />
+        android:background="#ff8f00"
+        android:clickable="true" />
 
     <Button
         android:layout_width="fill_parent"
@@ -111,7 +118,7 @@
         android:text="Other"
         android:id="@+id/button8"
         android:textStyle="bold"
-        android:clickable="false"
+        android:clickable="true"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
