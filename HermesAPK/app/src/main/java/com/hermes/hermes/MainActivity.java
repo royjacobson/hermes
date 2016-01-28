@@ -19,9 +19,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-
-
-
+        Button musicBtn = (Button) findViewById(R.id.music_btn);
+        Button sportBtn = (Button) findViewById(R.id.sports_btn);
+        Button artBtn = (Button) findViewById(R.id.art_btn);
+        Button filmBtn = (Button) findViewById(R.id.films_btn);
+        Button festiBtn = (Button) findViewById(R.id.festi_btn);
+        Button danceBtn = (Button) findViewById(R.id.dance_btn);
+        Button otherBtn = (Button) findViewById(R.id.other_btn);
     }
 
     @Override
