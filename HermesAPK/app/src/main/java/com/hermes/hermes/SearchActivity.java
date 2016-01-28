@@ -27,16 +27,16 @@ public class SearchActivity extends AppCompatActivity {
 
                 final Button button = (Button) findViewById(R.id.buttonContinue);
                 button.setOnClickListener(new View.OnClickListener()
-
                 {
                     public void onClick(View v)
                     {
-                        String strCountry = country.getText().toString();
-                        String strNum= num.getText().toString();
-                        String strAge= age.getText().toString();
-                        String strBudget= budget.getText().toString();
-                        String strDates= dates.getText().toString();
-                        String strEmail= email.getText().toString();
+                        String strCountry, strNum, strAge, strBudget, strDates, strEmail;
+                        strCountry = country.getText().toString();
+                        strNum= num.getText().toString();
+                        strAge= age.getText().toString();
+                        strBudget= budget.getText().toString();
+                        strDates= dates.getText().toString();
+                        strEmail= email.getText().toString();
 
                     }
 
