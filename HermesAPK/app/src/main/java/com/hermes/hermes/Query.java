@@ -23,16 +23,22 @@ public class Query {
     }
 
     public void sendQuery() {
-        Socket socket = new Socket();
+        Socket socket;
         SocketAddress socketAddress = new InetSocketAddress(serverIP, serverPort);
         OutputStream outputStream = null;
         PrintWriter printWriter = null;
         try {
-            socket = new Socket(serverIP, serverPort);
-            socket.connect(socketAddress);
+            socket = new Socket();
+            socket.connect(socketAddress,50);
             outputStream = socket.getOutputStream();
-            printWriter = new PrintWriter(outputStream);
-            printWriter.print("Lev Petrov");
+            printWriter = new PrintWriter(outputStream, true);
+            printWriter.print(json);
+            printWriter.flush();
+            printWriter.close();
+
+            outputStream.flush();
+            outputStream.close();
+            socket.close();
         } catch (IOException e) {
             e.printStackTrace();
             Toast.makeText(context,"Something went wrong during the socket opening", Toast.LENGTH_LONG)
