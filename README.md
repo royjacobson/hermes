@@ -1,3 +1,3 @@
 # hermes
 This is Hermes.
-Ariel and Eden are losers.
+Ariel and Eden are fuckwads.
