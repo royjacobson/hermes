@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    tools:context="com.hermes.hermes.SearchActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -28,7 +30,7 @@
         android:layout_toRightOf="@+id/textView"
         android:layout_alignTop="@+id/textView"
         android:layout_marginRight="42dp"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignBottom="@+id/textView" />
 
     <TextView
@@ -111,6 +113,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="number"
         android:id="@+id/editText2"
         android:layout_alignTop="@+id/textView2"
         android:layout_toRightOf="@+id/textView2"
@@ -121,6 +124,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="number"
         android:id="@+id/editText3"
         android:layout_alignRight="@+id/editText2"
         android:layout_alignEnd="@+id/editText2"
@@ -132,6 +136,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="number"
         android:id="@+id/editText4"
         android:layout_alignTop="@+id/textView4"
         android:layout_alignRight="@+id/editText3"
@@ -143,6 +148,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="date"
         android:id="@+id/editText5"
         android:layout_above="@+id/textView6"
         android:layout_toRightOf="@+id/textView5"
@@ -152,6 +158,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
         android:id="@+id/editText6"
         android:layout_alignBottom="@+id/textView6"
         android:layout_toRightOf="@+id/textView6"
@@ -162,7 +169,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Continue"
-        android:id="@+id/button"
+        android:id="@+id/buttonContinue"
         android:textStyle="bold"
         android:clickable="true"
         android:layout_marginBottom="45dp"

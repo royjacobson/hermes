@@ -1,5 +1,6 @@
 package com.hermes.hermes;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.design.widget.FloatingActionButton;
@@ -9,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,9 +20,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-        
-
-
+        Button musicBtn = (Button) findViewById(R.id.music_btn);
+        Button sportBtn = (Button) findViewById(R.id.sports_btn);
+        Button artBtn = (Button) findViewById(R.id.art_btn);
+        Button filmBtn = (Button) findViewById(R.id.films_btn);
+        Button festiBtn = (Button) findViewById(R.id.festi_btn);
+        Button danceBtn = (Button) findViewById(R.id.dance_btn);
+        Button otherBtn = (Button) findViewById(R.id.other_btn);
+        Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+        MainActivity.this.startActivity(intent);
     }
 
     @Override
