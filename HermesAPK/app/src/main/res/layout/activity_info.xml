@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:height="200dp"
+        android:height="100dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Description:"
         android:id="@+id/textView8"
@@ -40,7 +40,8 @@
         android:textStyle="bold"
         android:background="#ffe082"
         android:textSize="30dp"
-        android:layout_above="@+id/textView10"
+
+        android:layout_below="@+id/textView8"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -53,7 +54,7 @@
         android:background="#ffe082"
         android:textStyle="bold"
         android:textSize="30dp"
-        android:layout_above="@+id/textView11"
+        android:layout_below="@+id/textView9"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -67,45 +68,23 @@
         android:background="#ffe082"
         android:textIsSelectable="false"
         android:textSize="30dp"
-        android:layout_above="@+id/textView12"
+        android:layout_below="@+id/textView10"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="URL:"
         android:id="@+id/textView12"
         android:background="#ffe082"
         android:textStyle="bold"
         android:textSize="30dp"
-        android:layout_below="@+id/textView8"
+        android:layout_below="@+id/textView11"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText8"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignBottom="@+id/textView12"
-        android:layout_toEndOf="@+id/textView12"
-        android:layout_toRightOf="@+id/textView12"
-        android:layout_below="@+id/textView11"
-        android:background="#ffe082" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText9"
-        android:layout_above="@+id/editText8"
-        android:layout_toRightOf="@+id/textView11"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/textView11"
-        android:background="#ffe082" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -113,21 +92,8 @@
         android:id="@+id/editText10"
         android:layout_above="@+id/textView11"
         android:layout_toRightOf="@+id/textView10"
-        android:layout_alignRight="@+id/editText9"
-        android:layout_alignEnd="@+id/editText9"
         android:layout_alignTop="@+id/textView10"
         android:background="#ffe082" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText11"
-        android:layout_toRightOf="@+id/textView9"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:background="#ffe082"
-        android:layout_below="@+id/editText7"
-        android:layout_alignBottom="@+id/textView9" />
 
     <Button
         android:layout_width="wrap_content"
@@ -136,10 +102,55 @@
         android:id="@+id/button9"
         android:background="#ffc107"
         android:textStyle="bold"
-        android:layout_below="@+id/textView12"
+        android:layout_below="@+id/editText12"
+        android:layout_alignRight="@+id/editText12"
+        android:layout_alignEnd="@+id/editText12"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText8"
+        android:layout_above="@+id/textView10"
+        android:layout_toRightOf="@+id/textView9"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="#ffe082"
+        android:layout_alignTop="@+id/textView9" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText9"
+        android:layout_alignTop="@+id/textView11"
+        android:layout_toRightOf="@+id/textView11"
         android:layout_alignRight="@+id/editText8"
-        android:layout_alignEnd="@+id/editText8" />
+        android:layout_alignEnd="@+id/editText8"
+        android:background="#ffe082"
+        android:layout_above="@+id/textView12" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText11"
+        android:layout_alignBottom="@+id/textView10"
+        android:layout_toRightOf="@+id/textView10"
+        android:layout_alignRight="@+id/editText8"
+        android:layout_alignEnd="@+id/editText8"
+        android:layout_below="@+id/editText8"
+        android:background="#ffe082" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText12"
+        android:layout_below="@+id/textView11"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/textView12"
+        android:layout_toEndOf="@+id/textView12"
+        android:background="#ffe082"
+        android:layout_alignBottom="@+id/textView12" />
 
 </RelativeLayout>
