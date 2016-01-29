@@ -67,4 +67,16 @@
         android:layout_below="@+id/textView18"
         android:layout_centerHorizontal="true"
         android:background="#ff6f00" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GO!"
+        android:id="@+id/button10"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="58dp"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:background="@android:color/transparent" />
 </RelativeLayout>
