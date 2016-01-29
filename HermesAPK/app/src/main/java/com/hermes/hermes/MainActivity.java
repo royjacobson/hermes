@@ -1,5 +1,6 @@
 package com.hermes.hermes;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.design.widget.FloatingActionButton;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         Button festiBtn = (Button) findViewById(R.id.festi_btn);
         Button danceBtn = (Button) findViewById(R.id.dance_btn);
         Button otherBtn = (Button) findViewById(R.id.other_btn);
+        Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+        MainActivity.this.startActivity(intent);
     }
 
     @Override

@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class SearchActivity extends AppCompatActivity {
 
     @Override
@@ -38,6 +41,19 @@ public class SearchActivity extends AppCompatActivity {
                         strDates= dates.getText().toString();
                         strEmail= email.getText().toString();
 
+                        JSONObject jsonObject = new JSONObject();
+                        try {
+                            jsonObject.accumulate("country", strCountry);
+                            jsonObject.accumulate("numberOfPeople", strNum);
+                            jsonObject.accumulate("age", strAge);
+                            jsonObject.accumulate("budget", strBudget);
+                            jsonObject.accumulate("dates", strDates);
+                            jsonObject.accumulate("email", strEmail);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        Query query = new Query(jsonObject.toString(), getApplicationContext());
+                        query.sendQuery();
                     }
 
                     })
