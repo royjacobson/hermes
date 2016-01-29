@@ -13,8 +13,6 @@ import java.net.SocketAddress;
 public class Query {
 
     String json;
-    static final String serverIP = "172.29.104.189";
-    static final int serverPort = 4356;
     private Context context;
 
     public Query(String json, Context context) {
@@ -22,23 +20,14 @@ public class Query {
         this.context = context;
     }
 
-    public void sendQuery() {
-        Socket socket;
-        SocketAddress socketAddress = new InetSocketAddress(serverIP, serverPort);
-        OutputStream outputStream = null;
+    public void sendQuery(OutputStream outputStream) {
         PrintWriter printWriter = null;
         try {
-            socket = new Socket();
-            socket.connect(socketAddress,50);
-            outputStream = socket.getOutputStream();
             printWriter = new PrintWriter(outputStream, true);
-            printWriter.print(json);
+            printWriter.print(json + '\n');
             printWriter.flush();
-            printWriter.close();
-
+            //printWriter.close();
             outputStream.flush();
-            outputStream.close();
-            socket.close();
         } catch (IOException e) {
             e.printStackTrace();
             Toast.makeText(context,"Something went wrong during the socket opening", Toast.LENGTH_LONG)

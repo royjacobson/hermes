@@ -20,15 +20,45 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-        Button musicBtn = (Button) findViewById(R.id.music_btn);
-        Button sportBtn = (Button) findViewById(R.id.sports_btn);
-        Button artBtn = (Button) findViewById(R.id.art_btn);
-        Button filmBtn = (Button) findViewById(R.id.films_btn);
-        Button festiBtn = (Button) findViewById(R.id.festi_btn);
-        Button danceBtn = (Button) findViewById(R.id.dance_btn);
-        Button otherBtn = (Button) findViewById(R.id.other_btn);
-        Intent intent = new Intent(MainActivity.this, SearchActivity.class);
-        MainActivity.this.startActivity(intent);
+        final Button musicBtn, sportBtn, artBtn, filmBtn, festiBtn, danceBtn, otherBtn;
+        musicBtn = (Button) findViewById(R.id.music_btn);
+        sportBtn = (Button) findViewById(R.id.sports_btn);
+        artBtn = (Button) findViewById(R.id.art_btn);
+        filmBtn = (Button) findViewById(R.id.films_btn);
+        festiBtn = (Button) findViewById(R.id.festi_btn);
+        danceBtn = (Button) findViewById(R.id.dance_btn);
+        otherBtn = (Button) findViewById(R.id.other_btn);
+        Button btn = new Button(this);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent;
+                switch(v.getId()){
+                    case R.id.art_btn:
+                        intent = new Intent(MainActivity.this,oneOption.class);
+                        intent.putExtra("type","festi");
+                        MainActivity.this.startActivity(intent);
+                        break;
+                    case R.id.other_btn:
+                        intent = new Intent(MainActivity.this,oneOption.class);
+                        intent.putExtra("type","festi");
+                        MainActivity.this.startActivity(intent);
+                        break;
+                    case R.id.dance_btn:
+                        intent = new Intent(MainActivity.this,oneOption.class);
+                        intent.putExtra("type","festi");
+                        MainActivity.this.startActivity(intent);
+                        break;
+                    case R.id.festi_btn:
+                        intent = new Intent(MainActivity.this,oneOption.class);
+                        intent.putExtra("type", "festi");
+                        MainActivity.this.startActivity(intent);
+                        break;
+                }
+            }
+        });
+        //Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+        //MainActivity.this.startActivity(intent);
     }
 
     @Override

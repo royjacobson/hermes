@@ -23,7 +23,19 @@
         <activity
             android:name=".SearchActivity"
             android:label="@string/title_activity_search"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".oneOption"
+            android:label="@string/title_activity_one_option"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".twoOption"
+            android:label="@string/title_activity_two_option"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".film"
+            android:label="@string/title_activity_film"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
