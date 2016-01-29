@@ -35,6 +35,10 @@
         <activity
             android:name=".film"
             android:label="@string/title_activity_film"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ShowInfo"
+            android:label="@string/title_activity_show_info"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

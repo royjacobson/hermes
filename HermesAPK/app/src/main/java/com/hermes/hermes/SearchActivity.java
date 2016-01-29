@@ -1,5 +1,6 @@
 package com.hermes.hermes;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -47,13 +48,16 @@ public class SearchActivity extends AppCompatActivity {
         final Button button = (Button) findViewById(R.id.buttonContinue);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String strCountry, strNum, strAge, strBudget, strDates, strEmail;
+                String strCountry, strNum, strAge, strBudget, strDates, strEmail, srtKeyword,
+                        srtCat;
                 strCountry = country.getText().toString();
                 strNum = num.getText().toString();
                 strAge = age.getText().toString();
                 strBudget = budget.getText().toString();
                 strDates = dates.getText().toString();
                 strEmail = email.getText().toString();
+                srtKeyword = getIntent().getStringExtra("type");
+                srtCat = getIntent().getStringExtra("cat");
 
                 Socket socket = null;
                 SocketAddress socketAddress = new InetSocketAddress(serverIP, serverPort);
@@ -67,17 +71,30 @@ public class SearchActivity extends AppCompatActivity {
                             .accumulate("age", strAge)
                             .accumulate("budget", strBudget)
                             .accumulate("dates", strDates)
-                            .accumulate("email", strEmail);
+                            .accumulate("email", strEmail)
+                            .accumulate("keywords", srtKeyword)
+                            .accumulate("category", srtCat);
                     OutputStream outputStream = socket.getOutputStream();
                     InputStream inputStream = socket.getInputStream();
                     Query query = new Query(jsonObject.toString(), getApplicationContext());
-                    Toast.makeText(getApplicationContext(), "starting sending" , Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "starting sending", Toast.LENGTH_LONG).show();
                     query.sendQuery(outputStream);
                     BufferedReader bufferedReader;
                     bufferedReader = new BufferedReader(new InputStreamReader(inputStream), 64000);
-                    Toast.makeText(getApplicationContext(), "waiting for response" , Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "waiting for response", Toast.LENGTH_LONG).show();
                     String js = bufferedReader.readLine();
                     JSONArray obj = new JSONArray(js);
+                    Intent intent = new Intent(SearchActivity.this,ShowInfo.class);
+                    String[] arr = new String[4];
+                    JSONObject temp = obj.getJSONObject(0);
+                    JSONObject event = temp.getJSONObject("event");
+                    arr[0] = event.getString("info");
+                    arr[1] = event.getString("price");
+                    arr[2] = event.getString("dates");
+                    arr[3] = event.getString("url");
+                   // arr[4] = event.getString("location");
+                    intent.putExtra("info", arr);
+                    SearchActivity.this.startActivity(intent);
                     Log.d("Buffer", Integer.toString(obj.length()));
                     Log.d("Buffer", Integer.toString(js.length()));
                 } catch (IOException | JSONException e) {
@@ -91,10 +108,7 @@ public class SearchActivity extends AppCompatActivity {
 
             }
 
-        })
-
-
-        ;
+        });
     }
 }
 

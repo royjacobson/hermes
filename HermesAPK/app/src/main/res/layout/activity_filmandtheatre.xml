@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     tools:context="com.hermes.hermes.film"
-    tools:showIn="@layout/activity_film"
+    tools:showIn="@layout/activity_filmandtheatre"
     android:layout_height="match_parent">
 
     <TextView
