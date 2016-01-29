@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,37 +29,63 @@ public class MainActivity extends AppCompatActivity {
         festiBtn = (Button) findViewById(R.id.festi_btn);
         danceBtn = (Button) findViewById(R.id.dance_btn);
         otherBtn = (Button) findViewById(R.id.other_btn);
-        Button btn = new Button(this);
-        btn.setOnClickListener(new View.OnClickListener() {
+        musicBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent;
-                switch(v.getId()){
-                    case R.id.art_btn:
-                        intent = new Intent(MainActivity.this,oneOption.class);
-                        intent.putExtra("type","festi");
-                        MainActivity.this.startActivity(intent);
-                        break;
-                    case R.id.other_btn:
-                        intent = new Intent(MainActivity.this,oneOption.class);
-                        intent.putExtra("type","festi");
-                        MainActivity.this.startActivity(intent);
-                        break;
-                    case R.id.dance_btn:
-                        intent = new Intent(MainActivity.this,oneOption.class);
-                        intent.putExtra("type","festi");
-                        MainActivity.this.startActivity(intent);
-                        break;
-                    case R.id.festi_btn:
-                        intent = new Intent(MainActivity.this,oneOption.class);
-                        intent.putExtra("type", "festi");
-                        MainActivity.this.startActivity(intent);
-                        break;
-                }
+                Intent intent = new Intent(MainActivity.this, twoOption.class);
+                intent.putExtra("type", "Music");
+                MainActivity.this.startActivity(intent);
             }
         });
-        //Intent intent = new Intent(MainActivity.this, SearchActivity.class);
-        //MainActivity.this.startActivity(intent);
+        sportBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, twoOption.class);
+                intent.putExtra("type", "Sports");
+                MainActivity.this.startActivity(intent);
+            }
+        });
+        artBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, oneOption.class);
+                intent.putExtra("type", "Art");
+                MainActivity.this.startActivity(intent);
+            }
+        });
+        filmBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, film.class);
+                intent.putExtra("type", "Film & Theatre");
+                MainActivity.this.startActivity(intent);
+            }
+        });
+        festiBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, oneOption.class);
+                intent.putExtra("type", "Festivals");
+                MainActivity.this.startActivity(intent);
+            }
+        });
+        danceBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, oneOption.class);
+                intent.putExtra("type", "Dance");
+                MainActivity.this.startActivity(intent);
+            }
+        });
+        otherBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, oneOption.class);
+                intent.putExtra("type", "Other");
+                MainActivity.this.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
