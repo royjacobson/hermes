@@ -20,20 +20,14 @@ public class Query {
         this.context = context;
     }
 
-    public void sendQuery(Socket socket) {
-
-        OutputStream outputStream = null;
+    public void sendQuery(OutputStream outputStream) {
         PrintWriter printWriter = null;
         try {
-
-            outputStream = socket.getOutputStream();
             printWriter = new PrintWriter(outputStream, true);
-            printWriter.print(json);
+            printWriter.print(json + '\n');
             printWriter.flush();
-            printWriter.close();
-
+            //printWriter.close();
             outputStream.flush();
-            outputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
             Toast.makeText(context,"Something went wrong during the socket opening", Toast.LENGTH_LONG)

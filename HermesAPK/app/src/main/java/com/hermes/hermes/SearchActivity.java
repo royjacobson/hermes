@@ -5,15 +5,21 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.JsonReader;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
@@ -55,23 +61,26 @@ public class SearchActivity extends AppCompatActivity {
                 JSONObject jsonObject = new JSONObject();
                 try {
                     socket = new Socket();
-                    socket.connect(socketAddress, 50);
+                    socket.connect(socketAddress, 30000);
                     jsonObject.accumulate("country", strCountry)
                             .accumulate("numberOfPeople", strNum)
                             .accumulate("age", strAge)
                             .accumulate("budget", strBudget)
                             .accumulate("dates", strDates)
                             .accumulate("email", strEmail);
-                } catch (JSONException | IOException e) {
-                    e.printStackTrace();
-                }
-                Query query = new Query(jsonObject.toString(), getApplicationContext());
-                query.sendQuery(socket);
-                InputStream inputStream;
-                try {
-                    inputStream = socket.getInputStream();
-                    int i = inputStream.read();
-                } catch (IOException e) {
+                    OutputStream outputStream = socket.getOutputStream();
+                    InputStream inputStream = socket.getInputStream();
+                    Query query = new Query(jsonObject.toString(), getApplicationContext());
+                    Toast.makeText(getApplicationContext(), "starting sending" , Toast.LENGTH_LONG).show();
+                    query.sendQuery(outputStream);
+                    BufferedReader bufferedReader;
+                    bufferedReader = new BufferedReader(new InputStreamReader(inputStream), 64000);
+                    Toast.makeText(getApplicationContext(), "waiting for response" , Toast.LENGTH_LONG).show();
+                    String js = bufferedReader.readLine();
+                    JSONArray obj = new JSONArray(js);
+                    Log.d("Buffer", Integer.toString(obj.length()));
+                    Log.d("Buffer", Integer.toString(js.length()));
+                } catch (IOException | JSONException e) {
                     e.printStackTrace();
                 }
                 try {

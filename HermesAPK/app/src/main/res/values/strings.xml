@@ -2,4 +2,7 @@
     <string name="app_name">Hermes</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_one_option">oneOption</string>
+    <string name="title_activity_two_option">twoOption</string>
+    <string name="title_activity_film">film</string>
 </resources>
